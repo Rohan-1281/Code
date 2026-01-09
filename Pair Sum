@@ -1,6 +1,6 @@
 //Pair Sum
 
------>>> Two pointer method (O(n))
+//----->>> Two pointer method (O(n))
 
 #include <bits/stdc++.h>
 using namespace std;
