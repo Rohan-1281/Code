@@ -1,6 +1,6 @@
 //Max Subarray Sum
 
------>>Bruteforce Method (0n2)
+//----->>Bruteforce Method (0n2)
 
 #include <bits/stdc++.h>
 using namespace std;
