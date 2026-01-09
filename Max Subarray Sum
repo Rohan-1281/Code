@@ -1,0 +1,63 @@
+//Max Subarray Sum
+
+----->>Bruteforce Method (0n2)
+
+#include <bits/stdc++.h>
+using namespace std;
+const long long M = 1e9 + 7;
+
+int main() {
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+int arr[5]={1,2,3,4,5};
+int n=5;
+int maxsum=INT_MIN;
+for(int st=0;st<n;st++){
+    int cursum=0;
+    for(int end=st;end<n;end++){
+          cursum+=arr[end];
+          maxsum=max(maxsum,cursum);
+        } 
+    }
+    cout<<maxsum<<endl;  
+return 0;
+}
+
+
+
+------>>>>> Kaden's Algorithm (0n)
+
+
+#include <bits/stdc++.h>
+  using namespace std;
+  const long long M = 1e9 + 7;
+  
+  int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  
+  int arr[7]={3,-4,7,-1,6,-4};
+  int n=7;
+  int maxsum=INT_MIN;
+  int cursum=0;
+  for(int i=0;i<n;i++){
+    cursum+=arr[i];
+    maxsum=max(cursum,maxsum);
+    if(cursum<0){
+        cursum=0;
+    }
+  }
+
+  cout<<maxsum<<endl;
+  
+  
+  return 0;
+  }
+   
+
+
+
+
+
+
