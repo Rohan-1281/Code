@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+const long long M = 1e9 + 7;
+
+int main() {
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+   int n;
+    cin >> n;
+
+    vector<int> A(n);
+    for(int i = 0; i < n; i++){
+        cin >> A[i];
+    }
+
+    int st = 1, end = n - 2;   // because peak can't be at 0 or n-1
+    int ans = -1;
+
+    while(st <= end){
+        int mid = st + (end - st) / 2;
+
+        if(A[mid-1] < A[mid] && A[mid] > A[mid+1]){
+            ans = mid;   // peak found
+            break;
+        }
+        else if(A[mid] < A[mid+1]){   // right side increasing
+            st = mid + 1;
+        }
+        else{   // left side decreasing
+            end = mid - 1;
+        }
+    }
+
+    cout << ans << '\n';
+    return 0;
+}
