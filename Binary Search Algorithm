@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+const long long M = 1e9 + 7;
+
+int main() {
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+  int n;
+    cin >> n;
+
+    vector<int> arr(n);
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+
+    int tar;
+    cin >> tar;
+
+    int st = 0, end = n - 1;
+    int ans = -1;
+
+    while(st <= end){
+        int mid = st + (end - st) / 2; //NOTE
+
+        if(arr[mid] == tar){
+            ans = mid;
+            break;
+        }
+        else if(arr[mid] > tar){
+            end = mid - 1;
+        }
+        else{
+            st = mid + 1;
+        }
+    }
+
+    cout << ans+1 << endl;
+    return 0;
+}
